@@ -6,19 +6,40 @@ var Game = function(playerOne, playerTwo) {
 
 Game.prototype.init = function() {
     this.rounds = 0;
-    this.SOURCE = {
+    this.CHOICE = {
         ROCK: 'piedra',
         PAPER: 'papel',
         SCISSORS: 'tijeras'
     };
     this.RESULTS = {
-        DRAW: 'empate'
+        DRAW: 'empate',
+        PLAYERONEWINS: 'gana el jugador ' + this.playerOne,
+        PLAYERTWOWINS: 'gana el jugador ' + this.playerTwo
     };
 };
 
 Game.prototype.round = function(playerOneChoice, playerTwoChoice) {
-	if(playerOneChoice === playerTwoChoice){
-		this.result  = this.RESULTS.DRAW;
-	}
-	return this.result;
+    this.logic(playerOneChoice, playerTwoChoice);
+    return this.result;
 };
+
+Game.prototype.logic = function(playerOneChoice, playerTwoChoice) {
+    if (playerOneChoice === playerTwoChoice) {
+        this.result = this.RESULTS.DRAW;
+    } else {
+        switch (playerOneChoice) {
+            case this.CHOICE.ROCK:
+                this.playerOneRockWin(playerTwoChoice);
+                break;
+        }
+    }
+};
+
+Game.prototype.playerOneRockWin = function(playerTwoChoice){
+	if(playerTwoChoice === this.CHOICE.PAPER){
+		this.result = this.RESULTS.PLAYERTWOWINS;
+	}else{
+		this.result = this.RESULTS.PLAYERONEWINS;
+	}
+};
+
