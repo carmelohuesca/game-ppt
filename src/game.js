@@ -31,15 +31,25 @@ Game.prototype.logic = function(playerOneChoice, playerTwoChoice) {
             case this.CHOICE.ROCK:
                 this.playerOneRockWin(playerTwoChoice);
                 break;
+            case this.CHOICE.PAPER:
+                this.playerOnePaperWin(playerTwoChoice);
+                break;
         }
     }
 };
 
-Game.prototype.playerOneRockWin = function(playerTwoChoice){
-	if(playerTwoChoice === this.CHOICE.PAPER){
-		this.result = this.RESULTS.PLAYERTWOWINS;
-	}else{
-		this.result = this.RESULTS.PLAYERONEWINS;
-	}
+Game.prototype.playerOneRockWin = function(playerTwoChoice) {
+    if (playerTwoChoice === this.CHOICE.PAPER) {
+        this.result = this.RESULTS.PLAYERTWOWINS;
+    } else {
+        this.result = this.RESULTS.PLAYERONEWINS;
+    }
 };
 
+Game.prototype.playerOnePaperWin = function(playerTwoChoice) {
+    if (playerTwoChoice === this.CHOICE.SCISSORS) {
+        this.result = this.RESULTS.PLAYERTWOWINS;
+    } else {
+        this.result = this.RESULTS.PLAYERONEWINS;
+    }
+};
