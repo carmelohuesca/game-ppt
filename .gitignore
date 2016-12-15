@@ -1,0 +1,4 @@
+# modulos de node
+node_modules
+# archivo de entorno
+.env
