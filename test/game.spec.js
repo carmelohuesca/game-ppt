@@ -15,6 +15,12 @@ describe('Especificaciones Game:', function() {
         expect(game.rounds).toBe(0);
     });
 
+    it('se incrementa el número de ronda en cada de tirada', function() {
+        expect(game.rounds).toBe(0);
+        expect(game.round(game.CHOICE.ROCK, game.CHOICE.ROCK)).toBe(game.RESULTS.DRAW);
+        expect(game.rounds).toBe(1);
+    });
+
     it('el juego tiene tres opciones inicialmente (piedra, papel, tijera)', function() {
         expect(game.CHOICE.ROCK).toBe('piedra');
         expect(game.CHOICE.PAPER).toBe('papel');
@@ -22,17 +28,14 @@ describe('Especificaciones Game:', function() {
     });
 
     describe('Empatan cuando:', function() {
-
         it('los dos jugadores eligen la misma opción', function() {
             expect(game.round(game.CHOICE.ROCK, game.CHOICE.ROCK)).toBe(game.RESULTS.DRAW);
             expect(game.round(game.CHOICE.PAPER, game.CHOICE.PAPER)).toBe(game.RESULTS.DRAW);
             expect(game.round(game.CHOICE.SCISSORS, game.CHOICE.SCISSORS)).toBe(game.RESULTS.DRAW);
         });
-
     });
 
     describe('Gana el jugador 1 cuando:', function() {
-
         it('el jugador 1 elige "piedra" y el jugador 2 elige "tijeras"', function() {
             expect(game.round(game.CHOICE.ROCK, game.CHOICE.SCISSORS)).toBe(game.RESULTS.PLAYERONEWINS);
         });
@@ -44,11 +47,9 @@ describe('Especificaciones Game:', function() {
         it('el jugador 1 elige "tijeras" y el jugador 2 elige "papel"', function() {
             expect(game.round(game.CHOICE.SCISSORS, game.CHOICE.PAPER)).toBe(game.RESULTS.PLAYERONEWINS);
         });
-
     });
 
     describe('Gana el jugador 2 cuando:', function() {
-
         it('el jugador 1 elige "piedra" y el jugador 2 elige "papel"', function() {
             expect(game.round(game.CHOICE.ROCK, game.CHOICE.PAPER)).toBe(game.RESULTS.PLAYERTWOWINS);
         });
@@ -57,10 +58,9 @@ describe('Especificaciones Game:', function() {
             expect(game.round(game.CHOICE.PAPER, game.CHOICE.SCISSORS)).toBe(game.RESULTS.PLAYERTWOWINS);
         });
 
-        xit('el jugador 1 elige "tijeras" y el jugador 2 elige "piedra"', function() {
+        it('el jugador 1 elige "tijeras" y el jugador 2 elige "piedra"', function() {
             expect(game.round(game.CHOICE.SCISSORS, game.CHOICE.ROCK)).toBe(game.RESULTS.PLAYERTWOWINS);
         });
-
     });
 
 });

@@ -20,6 +20,7 @@ Game.prototype.init = function() {
 
 Game.prototype.round = function(playerOneChoice, playerTwoChoice) {
     this.logic(playerOneChoice, playerTwoChoice);
+    this.rounds++;
     return this.result;
 };
 
