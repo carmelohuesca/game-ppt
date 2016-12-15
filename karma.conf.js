@@ -19,6 +19,9 @@ module.exports = function(config) {
       'test/**/*.spec.js'
     ],
 
+    // html reporters
+    reporters: ['kjhtml'],
+
 
     // list of files to exclude
     exclude: [
