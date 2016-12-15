@@ -14,17 +14,19 @@ describe('Especificaciones Game:', function() {
     });
 
     it('el juego tiene tres opciones inicialmente (piedra, papel, tijera)', function() {
-        expect(game.SOURCES.ROCK).toBe('piedra');
-        expect(game.SOURCES.PAPER).toBe('papel');
-        expect(game.SOURCES.SCISSORS).toBe('tijeras');
+        expect(game.SOURCE.ROCK).toBe('piedra');
+        expect(game.SOURCE.PAPER).toBe('papel');
+        expect(game.SOURCE.SCISSORS).toBe('tijeras');
     });
 
     describe('Empatan cuando:', function() {
+
         it('los dos jugadores eligen la misma opción', function() {
-            expect(game.round(game.SOURCES.ROCK, game.SOURCES.ROCK)).toBe(game.RESULTS.DRAW);
-            expect(game.round(game.SOURCES.PAPER, game.SOURCES.PAPER)).toBe(game.RESULTS.DRAW);
-            expect(game.round(game.SOURCES.SCISSORS, game.SOURCES.SCISSORS)).toBe(game.RESULTS.DRAW);
+            expect(game.round(game.SOURCE.ROCK, game.SOURCE.ROCK)).toBe(game.RESULTS.DRAW);
+            expect(game.round(game.SOURCE.PAPER, game.SOURCE.PAPER)).toBe(game.RESULTS.DRAW);
+            expect(game.round(game.SOURCE.SCISSORS, game.SOURCE.SCISSORS)).toBe(game.RESULTS.DRAW);
         });
+
     });
 
     // describe('Gana el jugador 1 cuando:', function() {

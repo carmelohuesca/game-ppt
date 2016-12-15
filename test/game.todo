@@ -1,6 +1,6 @@
 Especificaciones:
-  ✔ el juego se inicia con dos jugadores @done (16-12-15 19:31)
-  ✔ el juego tiene tres opciones inicialmente (piedra, papel, tijera) @done (16-12-15 19:31)
+  ✔ el juego se inicia con dos jugadores @done (16-12-15 19:38)
+  ✔ el juego tiene tres opciones inicialmente (piedra, papel, tijera) @done (16-12-15 19:45)
   Empatan cuando:
   ☐ los dos jugadores eligen la misma opción
   Gana el jugador 1 cuando:

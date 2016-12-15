@@ -6,7 +6,7 @@ var Game = function(playerOne, playerTwo) {
 
 Game.prototype.init = function() {
     this.rounds = 0;
-    this.SOURCES = {
+    this.SOURCE = {
         ROCK: 'piedra',
         PAPER: 'papel',
         SCISSORS: 'tijeras'
@@ -18,7 +18,7 @@ Game.prototype.init = function() {
 
 Game.prototype.round = function(playerOneChoice, playerTwoChoice) {
 	if(playerOneChoice === playerTwoChoice){
-		this.result = this.RESULTS.DRAW;
+		this.result  = this.RESULTS.DRAW;
 	}
 	return this.result;
 };
