@@ -41,26 +41,26 @@ describe('Especificaciones Game:', function() {
             expect(game.round(game.CHOICE.PAPER, game.CHOICE.ROCK)).toBe(game.RESULTS.PLAYERONEWINS);
         });
 
-        // it('el jugador 1 elige "tijeras" y el jugador 2 elige "papel"', function() {
-
-        // });
+        it('el jugador 1 elige "tijeras" y el jugador 2 elige "papel"', function() {
+            expect(game.round(game.CHOICE.SCISSORS, game.CHOICE.PAPER)).toBe(game.RESULTS.PLAYERONEWINS);
+        });
 
     });
 
-    // describe('Gana el jugador 2 cuando:', function() {
+    describe('Gana el jugador 2 cuando:', function() {
 
-    //   it('el jugador 1 elige "piedra" y el jugador 2 elige "papel"', function() {
+        it('el jugador 1 elige "piedra" y el jugador 2 elige "papel"', function() {
+            expect(game.round(game.CHOICE.ROCK, game.CHOICE.PAPER)).toBe(game.RESULTS.PLAYERTWOWINS);
+        });
 
-    //   });
+        it('el jugador 1 elige "papel" y el jugador 2 elige "tijeras"', function() {
+            expect(game.round(game.CHOICE.PAPER, game.CHOICE.SCISSORS)).toBe(game.RESULTS.PLAYERTWOWINS);
+        });
 
-    //   it('el jugador 1 elige "papel" y el jugador 2 elige "tijeras"', function() {
+        xit('el jugador 1 elige "tijeras" y el jugador 2 elige "piedra"', function() {
+            expect(game.round(game.CHOICE.SCISSORS, game.CHOICE.ROCK)).toBe(game.RESULTS.PLAYERTWOWINS);
+        });
 
-    //   });
-
-    //   it('el jugador 1 elige "tijeras" y el jugador 2 elige "piedra"', function() {
-
-    //   });
-
-    // });
+    });
 
 });

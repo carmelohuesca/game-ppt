@@ -34,6 +34,9 @@ Game.prototype.logic = function(playerOneChoice, playerTwoChoice) {
             case this.CHOICE.PAPER:
                 this.playerOnePaperWin(playerTwoChoice);
                 break;
+            case this.CHOICE.SCISSORS:
+                this.playerOneScissorsWin(playerTwoChoice);
+                break;
         }
     }
 };
@@ -48,6 +51,14 @@ Game.prototype.playerOneRockWin = function(playerTwoChoice) {
 
 Game.prototype.playerOnePaperWin = function(playerTwoChoice) {
     if (playerTwoChoice === this.CHOICE.SCISSORS) {
+        this.result = this.RESULTS.PLAYERTWOWINS;
+    } else {
+        this.result = this.RESULTS.PLAYERONEWINS;
+    }
+};
+
+Game.prototype.playerOneScissorsWin = function(playerTwoChoice) {
+    if (playerTwoChoice === this.CHOICE.ROCK) {
         this.result = this.RESULTS.PLAYERTWOWINS;
     } else {
         this.result = this.RESULTS.PLAYERONEWINS;
