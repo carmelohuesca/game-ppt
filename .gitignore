@@ -2,3 +2,5 @@
 node_modules
 # archivo de entorno
 .env
+# cobertura del test
+coverage
