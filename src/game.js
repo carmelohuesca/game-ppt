@@ -43,15 +43,15 @@ Game.prototype.logic = function(playerOneChoice, playerTwoChoice) {
 };
 
 Game.prototype.playerOneRockChoice = function(playerTwoChoice) {
-    this.playerTwoWins(playerTwoChoice === this.CHOICE.PAPER);
+    this.playerOneWins(playerTwoChoice !== this.CHOICE.PAPER);
 };
 
 Game.prototype.playerOnePaperChoice = function(playerTwoChoice) {
-    this.playerTwoWins(playerTwoChoice === this.CHOICE.SCISSORS);
+    this.playerOneWins(playerTwoChoice !== this.CHOICE.SCISSORS);
 };
 
 Game.prototype.playerOneScissorsChoice = function(playerTwoChoice) {
-    this.playerTwoWins(playerTwoChoice === this.CHOICE.ROCK);
+    this.playerOneWins(playerTwoChoice !== this.CHOICE.ROCK);
 };
 
 Game.prototype.playerOneWins = function(isPlayerOneWinnerChoice){
