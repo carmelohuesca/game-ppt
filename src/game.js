@@ -30,38 +30,33 @@ Game.prototype.logic = function(playerOneChoice, playerTwoChoice) {
     } else {
         switch (playerOneChoice) {
             case this.CHOICE.ROCK:
-                this.playerOneRockWin(playerTwoChoice);
+                this.playerOneRockChoice(playerTwoChoice);
                 break;
             case this.CHOICE.PAPER:
-                this.playerOnePaperWin(playerTwoChoice);
+                this.playerOnePaperChoice(playerTwoChoice);
                 break;
             case this.CHOICE.SCISSORS:
-                this.playerOneScissorsWin(playerTwoChoice);
+                this.playerOneScissorsChoice(playerTwoChoice);
                 break;
         }
     }
 };
 
-Game.prototype.playerOneRockWin = function(playerTwoChoice) {
-    if (playerTwoChoice === this.CHOICE.PAPER) {
-        this.result = this.RESULTS.PLAYERTWOWINS;
-    } else {
-        this.result = this.RESULTS.PLAYERONEWINS;
-    }
+Game.prototype.playerOneRockChoice = function(playerTwoChoice) {
+    this.playerTwoWins(playerTwoChoice === this.CHOICE.PAPER);
 };
 
-Game.prototype.playerOnePaperWin = function(playerTwoChoice) {
-    if (playerTwoChoice === this.CHOICE.SCISSORS) {
-        this.result = this.RESULTS.PLAYERTWOWINS;
-    } else {
-        this.result = this.RESULTS.PLAYERONEWINS;
-    }
+Game.prototype.playerOnePaperChoice = function(playerTwoChoice) {
+    this.playerTwoWins(playerTwoChoice === this.CHOICE.SCISSORS);
 };
 
-Game.prototype.playerOneScissorsWin = function(playerTwoChoice) {
-    if (playerTwoChoice === this.CHOICE.ROCK) {
-        this.result = this.RESULTS.PLAYERTWOWINS;
-    } else {
-        this.result = this.RESULTS.PLAYERONEWINS;
-    }
+Game.prototype.playerOneScissorsChoice = function(playerTwoChoice) {
+    this.playerTwoWins(playerTwoChoice === this.CHOICE.ROCK);
+};
+
+Game.prototype.playerOneWins = function(isPlayerOneWinnerChoice){
+    this.playerTwoWins(!isPlayerOneWinnerChoice);
+};
+Game.prototype.playerTwoWins = function(isPlayerTwoWinnerChoice) {
+    this.result = (isPlayerTwoWinnerChoice) ? this.RESULTS.PLAYERTWOWINS : this.RESULTS.PLAYERONEWINS;
 };
