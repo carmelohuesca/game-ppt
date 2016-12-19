@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start",
-    "jsdoc":"jsdoc ./src -r -c ./jsdoc.json  -d ./docs && open ./docs/index.html"
+    "jsdoc": "jsdoc ./src -r -c ./jsdoc.json  -d ./docs && open ./docs/index.html"
   },
   "author": "aqualogy",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "karma-firefox-launcher": "^1.0.0",
     "karma-jasmine": "^1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "karma-jshint-preprocessor": "0.0.6",
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-safari-launcher": "^1.0.0"
   }

@@ -1,6 +1,6 @@
 var moduleGame = (function() {
     'use strict';
-    
+
     /**
      * @class Game
      * @description Representa el juego de Piedra-Papel-Tijera.
@@ -47,7 +47,7 @@ var moduleGame = (function() {
     };
 
     /**
-     * Método que se encarga de ejecutar la lógica. 
+     * Método que se encarga de ejecutar la lógica.
      * @method logic
      * @memberOf Game
      * @param  {string} playerOneChoice Elección del jugador 1.
