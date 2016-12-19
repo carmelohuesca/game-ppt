@@ -7,7 +7,7 @@ describe('Especificaciones Game:', function() {
     var DRAW,PLAYERONEWINS, PLAYERTWOWINS;
     
     beforeEach(function() {
-        game = new Game(PLAYERONE, PLAYERTWO);
+        game = new moduleGame.Game(PLAYERONE, PLAYERTWO);
         ROCK = game.CHOICE.ROCK;
         PAPER = game.CHOICE.PAPER;
         SCISSORS = game.CHOICE.SCISSORS;
