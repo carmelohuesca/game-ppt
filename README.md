@@ -14,7 +14,7 @@ Juego de Piedra-Papel-Tijeras para formación en TDD
 
 Para incluir este proyecto como dependencia:
 
-    $ npm install --save game
+    $ npm install --save game-ppt
 
 ## Instalación
 
@@ -37,6 +37,16 @@ Ejecutar los Test:
 Crear la documentación:
     
     $ npm run jsdoc
+
+## Publicación
+
+Registrar el usuario con la sentencia (solo una vez)
+
+    $ npm adduser
+
+Publicar el paquete en NPM
+
+    $ npm publish    
 
 ##Licencia
 
