@@ -1,5 +1,5 @@
 {
-  "name": "game",
+  "name": "game-ppt",
   "version": "1.0.0",
   "description": "juego de piedra, papel, tijera",
   "main": "index.js",
