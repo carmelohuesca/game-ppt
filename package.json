@@ -1,6 +1,6 @@
 {
   "name": "game-ppt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "juego de piedra, papel, tijera",
   "main": "index.js",
   "scripts": {

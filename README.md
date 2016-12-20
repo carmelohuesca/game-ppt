@@ -8,7 +8,7 @@ Juego de Piedra-Papel-Tijeras para formación en TDD
 
 * [node.js]: Sistema I/O para backend
 * [Karma]: Sistema de Test
-* [jsdoc]: Documentación
+* [jsDoc]: Documentación
 
 ## Inyectar como dependencia
 
@@ -58,4 +58,4 @@ MIT
    [Juego PPT]:<#>
    [node.js]: <http://nodejs.org>
    [Karma]: <https://karma-runner.github.io>
-   [jsdoc]: <http://usejsdoc.org/>
+   [jsDoc]: <http://usejsdoc.org>
