@@ -1,24 +1,30 @@
 {
-  "name": "game-ppt",
-  "version": "1.0.1",
-  "description": "juego de piedra, papel, tijera",
-  "main": "index.js",
-  "scripts": {
-    "test": "karma start",
-    "jsdoc": "jsdoc ./src -r -c ./jsdoc.json  -d ./docs && open ./docs/index.html"
-  },
-  "author": "aqualogy",
-  "license": "ISC",
-  "devDependencies": {
-    "jsdoc": "^3.4.3",
-    "karma": "^1.3.0",
-    "karma-chrome-launcher": "^2.0.0",
-    "karma-coverage": "^1.1.1",
-    "karma-firefox-launcher": "^1.0.0",
-    "karma-jasmine": "^1.1.0",
-    "karma-jasmine-html-reporter": "^0.2.2",
-    "karma-jshint-preprocessor": "0.0.6",
-    "karma-phantomjs-launcher": "^1.0.2",
-    "karma-safari-launcher": "^1.0.0"
-  }
+    "name": "game-ppt",
+    "version": "1.0.3",
+    "description": "juego de piedra, papel, tijera",
+    "main": "index.js",
+    "scripts": {
+        "prepublish": "npm run docs",
+        "postpublish": "open https://www.npmjs.com/package/game-ppt",
+        "test-single": "karma start --single-run",
+        "test": "karma start",
+        "predocs": "npm run test-single",
+        "docs":"npm run jsdoc",
+        "jsdoc": "jsdoc ./src -r -c ./jsdoc.json  -d ./docs",
+        "postjsdoc": "open ./docs/index.html"
+    },
+    "author": "aqualogy",
+    "license": "ISC",
+    "devDependencies": {
+        "jsdoc": "^3.4.3",
+        "karma": "^1.3.0",
+        "karma-chrome-launcher": "^2.0.0",
+        "karma-coverage": "^1.1.1",
+        "karma-firefox-launcher": "^1.0.0",
+        "karma-jasmine": "^1.1.0",
+        "karma-jasmine-html-reporter": "^0.2.2",
+        "karma-jshint-preprocessor": "0.0.6",
+        "karma-phantomjs-launcher": "^1.0.2",
+        "karma-safari-launcher": "^1.0.0"
+    }
 }
