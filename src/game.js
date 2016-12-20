@@ -25,7 +25,6 @@ var moduleGame = (function() {
      * memberOf Game
      * @description Método que inicializa las rondas.
      */
-
     Game.prototype.init = function() {
         this.CHOICE = Object.freeze({
             ROCK: 'piedra',
@@ -41,27 +40,27 @@ var moduleGame = (function() {
     };
 
     /**
-     * @description Método para reiniciar las rondas
      * method resetRound
      * memberOf Game
+     * @description Método para reiniciar las rondas.
      */
     Game.prototype.resetRound = function() {
         this.rounds = 0;
     };
 
     /**
-     * @description Método que se va a ejecutar cuando se cambie de ronda
      * method changeRound
      * memberOf Game
+     * @description Método que se va a ejecutar cuando se cambie de ronda.
      */
     Game.prototype.changeRound = function() {
         this.rounds++;
     };
 
     /**
-     * @description Método que se ejecuta en cada ronda.
      * method round
      * memberOf Game
+     * @description Método que se ejecuta en cada ronda.
      * @param  {string} playerOneChoice Elección del jugador 1.
      * @param  {string} playerTwoChoice Elección del jugador 2.
      * @return {string}                 Resultado de la ronda.
@@ -72,9 +71,9 @@ var moduleGame = (function() {
     };
 
     /**
-     * @description Método que se encarga de ejecutar la lógica.
      * method logic
      * memberOf Game
+     * @description Método que se encarga de ejecutar la lógica.
      * @param  {string} playerOneChoice Elección del jugador 1.
      * @param  {string} playerTwoChoice Elección del jugador 2.
      * @return {string}                 Resultado de la ronda.
@@ -129,9 +128,9 @@ var moduleGame = (function() {
     };
 
     /**
-     * @description Método que resuelve la lógica para que gane el jugador 1.
      * method playerOneWins
      * memberOf Game
+     * @description Método que resuelve la lógica para que gane el jugador 1.
      * @param  {boolean} isPlayerOneWinnerChoice Lógica booleana que para que gane el jugador 1.
      */
     Game.prototype.playerOneWins = function(isPlayerOneWinnerChoice) {
@@ -139,9 +138,9 @@ var moduleGame = (function() {
     };
 
     /**
-     * @description Método que resuelve la lógica para que gane el jugador 2.
      * method playerTwoWins
      * memberOf Game
+     * @description Método que resuelve la lógica para que gane el jugador 2.
      * @param  {boolean} isPlayerTwoWinnerChoice Lógica booleana que para que gane el jugador 2.
      */
     Game.prototype.playerTwoWins = function(isPlayerTwoWinnerChoice) {

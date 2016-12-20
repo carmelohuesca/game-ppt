@@ -1,6 +1,6 @@
 {
     "name": "game-ppt",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "juego de piedra, papel, tijera",
     "main": "index.js",
     "scripts": {
@@ -28,3 +28,4 @@
         "karma-safari-launcher": "^1.0.0"
     }
 }
+
