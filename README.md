@@ -1,10 +1,10 @@
-# Juego PPT 
+# Juegos TDD 
 
-Juego de Piedra-Papel-Tijeras para formación en TDD
+Conjunto de Juegos para formación en TDD
 
 ## Tecnologías
 
-[Juego PPT] usa los siguientes proyectos open source:
+[Juegos TDD] usa los siguientes proyectos open source:
 
 * [node.js]: Sistema I/O para backend
 * [Karma]: Sistema de Test
@@ -27,6 +27,13 @@ Comprobar la versión:
 Instalar las dependencias del proyecto y de desarrollo.
 
     $ npm install
+
+## Contenido
+
+* Juego de piedra, papel, tijera
+    moduleGame.Game
+* Juego de piedra, papel, tijera, lagarto, spock
+    moduleGame.SpockGame
 
 ## Ejecución
 
@@ -55,7 +62,7 @@ MIT
 ----
 
 [//]: # (These are reference links used in the body)
-   [Juego PPT]:<#>
+   [Juegos TDD]:<#>
    [node.js]: <http://nodejs.org>
    [Karma]: <https://karma-runner.github.io>
    [jsDoc]: <http://usejsdoc.org>
