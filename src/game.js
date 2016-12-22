@@ -84,13 +84,13 @@ var moduleGame = (function() {
         } else {
             switch (playerOneChoice) {
                 case this.CHOICE.ROCK:
-                    this.playerOneRockChoice(playerTwoChoice);
+                    this.rockChoice(playerTwoChoice);
                     break;
                 case this.CHOICE.PAPER:
-                    this.playerOnePaperChoice(playerTwoChoice);
+                    this.paperChoice(playerTwoChoice);
                     break;
                 case this.CHOICE.SCISSORS:
-                    this.playerOneScissorsChoice(playerTwoChoice);
+                    this.scissorsChoice(playerTwoChoice);
                     break;
             }
         }
@@ -98,42 +98,42 @@ var moduleGame = (function() {
     };
 
     /**
-     * method playerOneRockChoice
+     * method rockChoice
      * memberOf Game
      * @description Lógica cuando el jugador 1 elige Piedra.
-     * @param  {string} playerTwoChoice Elección del jugador 2.
+     * @param  {string} choice Elección del jugador.
      */
-    Game.prototype.playerOneRockChoice = function(playerTwoChoice) {
-        this.playerOneWins(playerTwoChoice !== this.CHOICE.PAPER);
+    Game.prototype.rockChoice = function(choice) {
+        this.shouldWinWhen(choice !== this.CHOICE.PAPER);
     };
 
     /**
-     * method playerOnePaperChoice
+     * method paperChoice
      * memberOf Game
      * @description Lógica cuando el jugador 1 elige Papel.
-     * @param  {string} playerTwoChoice Elección del jugador 2.
+     * @param  {string} choice Elección del jugador.
      */
-    Game.prototype.playerOnePaperChoice = function(playerTwoChoice) {
-        this.playerOneWins(playerTwoChoice !== this.CHOICE.SCISSORS);
+    Game.prototype.paperChoice = function(choice) {
+        this.shouldWinWhen(choice !== this.CHOICE.SCISSORS);
     };
 
     /**
-     * method playerOneScissorsChoice
+     * method scissorsChoice
      * memberOf Game
      * @description Lógica cuando el jugador 1 elige Tijeras.
-     * @param  {string} playerTwoChoice Elección del jugador 2.
+     * @param  {string} choice Elección del jugador.
      */
-    Game.prototype.playerOneScissorsChoice = function(playerTwoChoice) {
-        this.playerOneWins(playerTwoChoice !== this.CHOICE.ROCK);
+    Game.prototype.scissorsChoice = function(choice) {
+        this.shouldWinWhen(choice !== this.CHOICE.ROCK);
     };
 
     /**
-     * method playerOneWins
+     * method shouldWinWhen
      * memberOf Game
      * @description Método que resuelve la lógica para que gane el jugador 1.
      * @param  {boolean} isPlayerOneWinnerChoice Lógica booleana que para que gane el jugador 1.
      */
-    Game.prototype.playerOneWins = function(isPlayerOneWinnerChoice) {
+    Game.prototype.shouldWinWhen = function(isPlayerOneWinnerChoice) {
         this.playerTwoWins(!isPlayerOneWinnerChoice);
     };
 
@@ -151,7 +151,7 @@ var moduleGame = (function() {
     /**
      * @class moduleGame.SpockGame
      * @memberOf moduleGame
-     * @augments Game
+     * @augments moduleGame.Game
      * @description Representa el juego de Piedra-Papel-Tijera-Lagarto-Spock.
      * @constructor
      * @param {string} playerOne - Nombre del jugador 1.
@@ -199,19 +199,19 @@ var moduleGame = (function() {
         } else {
             switch (playerOneChoice) {
                 case this.CHOICE.ROCK:
-                    this.playerOneRockChoice(playerTwoChoice);
+                    this.rockChoice(playerTwoChoice);
                     break;
                 case this.CHOICE.PAPER:
-                    this.playerOnePaperChoice(playerTwoChoice);
+                    this.paperChoice(playerTwoChoice);
                     break;
                 case this.CHOICE.SCISSORS:
-                    this.playerOneScissorsChoice(playerTwoChoice);
+                    this.scissorsChoice(playerTwoChoice);
                     break;
                 case this.CHOICE.LIZARD:
-                    this.playerOneLizardChoice(playerTwoChoice);
+                    this.lizardChoice(playerTwoChoice);
                     break;
                 case this.CHOICE.SPOCK:
-                    this.playerOneSpockChoice(playerTwoChoice);
+                    this.spockChoice(playerTwoChoice);
                     break;
             }
         }
@@ -221,57 +221,68 @@ var moduleGame = (function() {
 
 
     /**
-     * method playerOneRockChoice
+     * method rockChoice
      * memberOf SpockGame
      * @description Lógica cuando el jugador 1 elige Piedra.
-     * @param  {string} playerTwoChoice Elección del jugador 2.
+     * @param  {string} choice Elección del jugador.
      */
-    SpockGame.prototype.playerOneRockChoice = function(playerTwoChoice) {
-        this.playerOneWins(playerTwoChoice !== this.CHOICE.PAPER && playerTwoChoice !== this.CHOICE.SPOCK);
+    SpockGame.prototype.rockChoice = function(choice) {
+        this.shouldWinWhen(this.isDistinctOf(choice, 'PAPER', 'SPOCK'));
     };
 
     /**
-     * method playerOnePaperChoice
+     * method paperChoice
      * memberOf SpockGame
      * @description Lógica cuando el jugador 1 elige Papel.
-     * @param  {string} playerTwoChoice Elección del jugador 2.
+     * @param  {string} choice Elección del jugador.
      */
-    SpockGame.prototype.playerOnePaperChoice = function(playerTwoChoice) {
-        this.playerOneWins(playerTwoChoice !== this.CHOICE.SCISSORS && playerTwoChoice !== this.CHOICE.LIZARD);
+    SpockGame.prototype.paperChoice = function(choice) {
+        this.shouldWinWhen(this.isDistinctOf(choice, 'SCISSORS', 'LIZARD'));
     };
 
     /**
-     * method playerOneScissorsChoice
+     * method scissorsChoice
      * memberOf SpockGame
      * @description Lógica cuando el jugador 1 elige Tijeras.
-     * @param  {string} playerTwoChoice Elección del jugador 2.
+     * @param  {string} choice Elección del jugador.
      */
-    SpockGame.prototype.playerOneScissorsChoice = function(playerTwoChoice) {
-        this.playerOneWins(playerTwoChoice !== this.CHOICE.ROCK && playerTwoChoice !== this.CHOICE.SPOCK);
+    SpockGame.prototype.scissorsChoice = function(choice) {
+        this.shouldWinWhen(this.isDistinctOf(choice, 'ROCK', 'SPOCK'));
     };
 
 
     /**
-     * method playerOneLizardChoice
+     * method lizardChoice
      * memberOf SpockGame
      * @description Lógica cuando el jugador 1 elige Lagarto.
-     * @param  {string} playerTwoChoice Elección del jugador 2.
+     * @param  {string} choice Elección del jugador.
      */
-    SpockGame.prototype.playerOneLizardChoice = function(playerTwoChoice) {
-        this.playerOneWins(playerTwoChoice !== this.CHOICE.ROCK && playerTwoChoice !== this.CHOICE.SCISSORS);
+    SpockGame.prototype.lizardChoice = function(choice) {
+        this.shouldWinWhen(this.isDistinctOf(choice, 'ROCK', 'SCISSORS'));
     };
 
     /**
-     * method playerOneSpockChoice
+     * method spockChoice
      * memberOf SpockGame
-     * @description Lógica cuando el jugador 1 elige Lagarto.
-     * @param  {string} playerTwoChoice Elección del jugador 2.
+     * @description Lógica cuando el jugador 1 elige Spock.
+     * @param  {string} choice Elección del jugador.
      */
-    SpockGame.prototype.playerOneSpockChoice = function(playerTwoChoice) {
-        this.playerOneWins(playerTwoChoice !== this.CHOICE.PAPER && playerTwoChoice !== this.CHOICE.LIZARD);
+    SpockGame.prototype.spockChoice = function(choice) {
+        this.shouldWinWhen(this.isDistinctOf(choice, 'PAPER', 'LIZARD'));
     };
 
-
+    /**
+     * method isDistinctOf
+     * memberOf SpockGame
+     * @description La elección es distinta de las dos siguientes.
+     * @param  {string}  choice       eleccion del jugador.
+     * @param  {string}  firstChoice  nombre de la elección primera simplificada.
+     * @param  {string}  secondChoice nombre de la elección primera simplificada.
+     * @return {Boolean}              Resultado de la elección
+     */
+    SpockGame.prototype.isDistinctOf = function(choice, firstChoice, secondChoice) {
+        return (choice !== this.CHOICE[firstChoice] && choice !== this.CHOICE[secondChoice]);
+    };
 
 
     return {
